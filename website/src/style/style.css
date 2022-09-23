@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+
+h4,.body-text-s{
+    letter-spacing: 3.25px;
+    padding : 0 !important;
+    color : #ffffff;
+    font-family: 'Barlow', sans-serif;
+}
+p,.body-text-s{
+    max-width : 490px;
+    line-height: 150%;
+    color : #d0d6f9;
+    margin-top : 18px;
+    margin-bottom : 18px;
+    font-family: 'Barlow', sans-serif;
+}
+h1,h2,h3{
+    color :rgb(255, 255, 255);
+    font-family: 'Bellefair', serif;
+}
+html{
+    scroll-padding: 7rem;
+    scroll-snap-type: proximity;
+}
+html::-webkit-scrollbar{
+    width: 1px;
+}
+html::-webkit-scrollbar-track{
+    background:rgb(0, 1, 8);
+}
+html::-webkit-scrollbar-thumb{
+    background: #ffffff88;
+}
+.main-home{
+    background-image: url("../assets/home/background-home-desktop.jpg");
+}
+
+/* style the header and navbar toggle */
+header{
+    position : fixed;
+    top : 0;left : 0;right : 0;
+}
+.header-container{
+    display : grid;
+    grid-area: 'logo navbar';
+    grid-template-columns: 23vw auto;
+}
+.logo{
+    grid-template-areas: logo;
+    margin-top : 21px;
+    margin-left: 22px;
+}
+.bars{
+    padding-top : 12px;
+    position: fixed;
+    top : 0;right : 0;
+    z-index : 22;
+    cursor: pointer;
+}
+.nav-header{
+    grid-template-areas: navbar;
+    background-color: #d0d6f933;
+    backdrop-filter: blur(40px);
+    display : none;
+}
+.nav-header.open{
+    display : block
+}
+.nav-header ul li span{
+    letter-spacing: 0;
+    font-weight: 700;
+    margin-right : 8px
+}
+@media (min-width : 385px){
+    .header-container{
+        grid-template-columns: 15vw auto;
+    }
+    .nav-header{
+        display: block;
+    }
+    .nav-header ul li a{
+        letter-spacing: 2.45px;
+        font-weight: 300;
+    }
+    .bars{
+        display: none;
+    }
+}
+@media (min-width : 785px){
+    .nav-header::before{
+        content:  "";
+        position: absolute;
+        top : 50%;right : 90%;
+        transform: translateY(50%);
+        width : 40vw;
+        height : 1px;
+        background-color:#d0d6f9;
+    }
+    .logo{
+        margin-top : 38px
+    }
+} 
+/* hover and active of link */
+
+body{
+    background-color: black;
+}
+    
+    /* style the componenet in react */
+    /* the home in all page of the componenets */
+.home{
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    .content{
+        display : flex;
+        align-items: center;
+    }
+    .div-1,.div-2{
+        display : flex;
+        flex-direction: column;
+    }
+    .explor{
+        aspect-ratio: 1/1;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        margin-left : 32px;
+        margin-right : 32px;
+        line-height: 100%;
+        font-size : 46px;
+        background-color: #ffffff;
+        border-radius: 50%;
+        text-align: center;
+        font-family: 'Bellefair', serif;
+        letter-spacing: 3px;
+        transition: all .3s ease 4ms;
+    }
+    .explor:hover,
+    .explor:active,
+    .explor:focus{
+        box-shadow: 0 0 0 45px rgba(255, 255, 255, 0.437);
+    }
+
+/* style the technology page */
+    .technology_overlay{
+        flex-direction: row;
+    gap : 48px;
+}
+
+.toggle_technology_content{
+    display : flex;
+    flex-direction: column;
+}
+.toggle_technology_content span{
+    border :2px solid rgba(255, 255, 255, 0.324);
+    color :rgb(255, 255, 255);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    line-height: 100%;
+    place-items: center;
+    font-weight: 300;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-size : 28px;
+    cursor: pointer;
+    transition: all .3s ease 4ms;
+}.toggle_technology_content span:hover{
+    border-color: #ffffff;
+}.toggle_technology_content span:active,
+.toggle_technology_content span.active{
+    background-color: #ffffff;
+    color : black
+}
+
+/* style the crew page */
+.toggle_crew_content span{
+    display: inline-block;
+    margin-right : 8px;
+    margin-left : 8px;
+    width : 12px;height : 12px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #ffffff2b;
+    cursor: pointer;
+    transition: all .3s ease 4ms;
+}
+.toggle_crew_content span:hover{
+    background-color: #ffffff84
+}
+.toggle_crew_content span:active,
+.toggle_crew_content span:focus,
+.toggle_crew_content span.active{
+    background-color: #ffffff;
+}
+.crew_role{
+    font-family: 'Bellefair', serif;
+    text-transform: uppercase;
+}
+
+/* style the destination page */
+.destination_overlay .destination_navbar_toggle li{
+    display: inline-block;
+    list-style: none;
+    margin-right : 12px;
+    margin-left : 12px;
+    border-bottom: 2px solid transparent;
+    color :rgba(255, 255, 255, 0.416);
+    padding-bottom: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+    transition: all .3s ease 4ms;
+}
+.destination_overlay .destination_navbar_toggle li:hover{
+    border-bottom: 2px solid rgba(255, 255, 255, 0.416);
+}
+.destination_overlay .destination_navbar_toggle li:active,
+.destination_overlay .destination_navbar_toggle li:focus,
+.destination_overlay .destination_navbar_toggle li.active{
+    color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+.destination_status{
+    display : flex;
+    justify-content: space-between;
+}
+.destination_status div{
+    display : flex;
+    flex-direction: column;
+    color :#ffffff
+}
+.destination_image img{
+    max-width : 435px;
+    max-height : 435px;
+}
+
+/* media quire for responseve */
+@media (max-width : 785px){
+    .content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .main-home .content{
+        margin-top : auto
+    }
+    .technology_home .content{
+        flex-direction: column-reverse;
+    }
+    .technology_overlay{
+        flex-direction: column;
+    }
+    .div-1,.div-2{
+        width : 100%;
+        text-align: center;
+        align-items: center;
+        gap : 18px;
+    }
+    .toggle_technology_content{
+        flex-direction: row;
+    }
+    .destination_image img{
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+@media (max-width : 385px){
+    .home{
+        text-align: center;
+    }
+    .crew-home .content,
+    .crew_overlay{
+        flex-direction: column-reverse;
+    }
+    .destination_status{
+        flex-direction: column;
+    }
+    .crew_image{
+        border-bottom:1px solid #ffffff70;
+    }
+    .nav-header{
+        padding-top : 6rem;
+        height : 100vh;
+    }
+    
+}
+
+
