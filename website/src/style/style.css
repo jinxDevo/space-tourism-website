@@ -80,7 +80,7 @@ header{
     font-weight: 700;
     margin-right : 8px
 }
-@media (min-width : 385px){
+@media (min-width : 445px){
     .header-container{
         grid-template-columns: 15vw auto;
     }
